@@ -1,35 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { GlobalDataContext } from "../../context/context";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import Logo from "../../assets/images/logo/logoColor.png";
 import { NavLink } from "react-router-dom";
-import Data from "../../api/Data.json";
 import {
   FaLocationArrow,
   FaPhoneAlt,
   FaCalendar,
-  FaClock,
   FaCreditCard,
   FaArrowRight,
 } from "react-icons/fa";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaYoutube,
-  FaLeaf,
-} from "react-icons/fa";
-
 function Footer1() {
-  // STATES
-  const [email, setEmail] = useState("");
-
-  // HANDLER
-  const onchangeHandler = (e) => {
-    setEmail(e.target.value);
-  };
-  const onSubmitHandler = (e) => {
-    e.preventDefault();
-  };
+  const { rpdata } = useContext(GlobalDataContext);
 
   const Navigation = [
     {
@@ -65,16 +46,23 @@ function Footer1() {
                 <div className="wid-title">
                   <h4>About Us</h4>
                 </div>
-                <p>{Data.dbAbout.description[0].text}</p>
+                <p>{rpdata?.dbAbout?.[0].text.substring(0, 150) + "..."}</p>
                 <div className="social_link">
-                  {Data.socialmedia.redes.map((item, index) => (
-                    <a key={index} href={item.url}>
-                      {item.icon === "facebook" ? <FaFacebookF /> : null}
-                      {item.icon === "twitter" ? <FaTwitter /> : null}
-                      {item.icon === "instagram" ? <FaInstagram /> : null}
-                      {item.icon === "youtube" ? <FaYoutube /> : null}
-                    </a>
-                  ))}
+                  {rpdata?.dbSocialMedia?.redes.map((item, index) => {
+                    return (
+                      <a
+                        href={item.url}
+                        key={index}
+                        target="_blank"
+                        className="text-white"
+                      >
+                        <i
+                          className={`fab fa-${item.icon}`}
+                          aria-hidden="true"
+                        />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -104,13 +92,13 @@ function Footer1() {
                 <div className="wid-title">
                   <h4>Services</h4>
                 </div>
-                {Data.dbServices.services.map((item, index) => (
+                {rpdata?.dbServices?.slice(0, 6).map((item, index) => (
                   <div className="single-contact-info" key={index}>
                     <div className="icon">
-                      <FaLeaf />
+                      <FaArrowRight />
                     </div>
                     <div className="contact-info">
-                      <NavLink to="/services">{item.title}</NavLink>{" "}
+                      <NavLink to="/services">{item.name}</NavLink>{" "}
                     </div>
                   </div>
                 ))}
@@ -127,43 +115,53 @@ function Footer1() {
                     <FaLocationArrow />
                   </div>
                   <div className="contact-info">
-                    <span>{Data.dbPrincipal.address[0].locations}</span>
+                    <span>{rpdata?.dbPrincipal?.location?.[0].address}</span>
                   </div>
                 </div>
-                {Data.dbPrincipal.phones.map((item, index) => (
-                  <div className="single-contact-info" key={index}>
-                    <div className="icon">
-                      <FaPhoneAlt />
+                {rpdata?.dbPrincipal?.phones?.map((item, index) => {
+                  return (
+                    <div className="single-contact-info" key={index}>
+                      <div className="icon">
+                        <FaPhoneAlt />
+                      </div>
+                      <div className="contact-info">
+                        <a href={`tel:+1${item.phone}`}>
+                          <span>{item.phone}</span>
+                        </a>
+                      </div>
                     </div>
-                    <div className="contact-info">
-                      <a href={`tel:+1${item.phone}`}>
-                        <span>{item.phone}</span>
-                      </a>
+                  );
+                })}
+                {rpdata?.dbPrincipal?.workdays?.map((item, index) => {
+                  return (
+                    <div className="single-contact-info">
+                      <div className="icon">
+                        <FaCalendar />
+                      </div>
+                      <div className="contact-info">
+                        <span> {item.day}</span>
+                      </div>
                     </div>
-                  </div>
-                ))}
-                <div className="single-contact-info">
-                  <div className="icon">
-                    <FaCalendar />
-                  </div>
-                  <div className="contact-info">
-                    <span>{Data.dbPrincipal.workdays}</span>
-                  </div>
-                </div>
-                <div className="single-contact-info">
-                  <div className="icon">
-                    <FaClock />
-                  </div>
-                  <div className="contact-info">
-                    <span>{Data.dbPrincipal.workHours}</span>
-                  </div>
-                </div>
+                  );
+                })}
+                {rpdata?.dbPrincipal?.workHours?.map((item, index) => {
+                  return (
+                    <div className="single-contact-info">
+                      <div className="icon">
+                        <FaCalendar />
+                      </div>
+                      <div className="contact-info">
+                        <span>{item.hour}</span>
+                      </div>
+                    </div>
+                  );
+                })}
                 <div className="single-contact-info">
                   <div className="icon">
                     <FaCreditCard />
                   </div>
                   <div className="contact-info">
-                    <span>{Data.dbPrincipal.payments}</span>
+                    <span>{rpdata?.dbPrincipal?.paymentMethod}</span>
                   </div>
                 </div>
               </div>
@@ -175,18 +173,22 @@ function Footer1() {
       <div className="footer-bottom">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-4 col-12">
-              <div className="copyright-info">
+            <div className="col-lg-4 col-12 pb-80">
+              <div className="copyright-info text-white">
                 <p>
                   &copy; Copyright By{" "}
-                  <a href="index.html">{Data.dbPrincipal.companyName}</a> - 2021
+                  <a href="index.html">{rpdata?.dbPrincipal?.name}</a> - 2022
                 </p>
               </div>
             </div>
             <div className="col-lg-4 col-12 text-center">
               <div className="footer-logo">
                 <a href="#top">
-                  <img src={Logo} alt="Dustrix" className="p-2" />
+                  <img
+                    src={rpdata?.dbPrincipal?.logo}
+                    className="p-2 logo_footer"
+                    alt="img"
+                  />
                 </a>
               </div>
             </div>
@@ -199,6 +201,10 @@ function Footer1() {
             </div>
           </div>
         </div>
+      </div>
+      <div class="elfsight-app-d8c23125-1a13-437c-979a-500f607750cb"></div>
+      <div className="visor_Counter">
+        <div class="elfsight-app-b8a56f1e-13f0-420d-a542-091d4e218b2d"></div>
       </div>
     </footer>
   );

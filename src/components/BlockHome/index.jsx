@@ -1,37 +1,43 @@
-import React from 'react';
-import { BsArrowRight } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
-import AgeImg from '../../assets/img/age.png';
-import Data from "../../api/Data.json";
+import React from "react";
+import { GlobalDataContext } from "../../context/context";
+import { BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import SkillBar from "../SkillSet/SkillBar";
 
 function Promo() {
-    return (
-        <section className="promo-featured-wrapper section-padding">
-            <div className="container">
-                <div className="row align-center">
-                    <div className="col-xl-6 col-12 text-center">
-                        <img src={AgeImg} alt="age" />
-                    </div>
-                    <div className="col-xl-6 col-12">
-                        <div className="block-contents ml-xl-5 mt-5 mt-xl-0">
-                            <span>{Data.dbPrincipal.companyName}</span>
-                            <h1>{Data.slogans[0].slogan}</h1>
-                            <h4>
-                               {Data.slogans[0].slogan}
-                            </h4>
-                            <p>
-                                 {Data.dbHome.description[0].text}
-                            </p>
-                            <Link to="/contact" className="theme-btn">
-                                Get In Touch
-                                <BsArrowRight style={{ fontSize: '20px', marginLeft: '15px' }} />
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+  const { rpdata } = React.useContext(GlobalDataContext);
+  return (
+    <section className="promo-featured-wrapper section-padding">
+      <div className="container">
+        <div className="row align-center responsive_block">
+          <div className="col-xl-6 col-12">
+            <div className="block-contents ml-xl-5 mt-5 mt-xl-0">
+              <span>{rpdata.dbPrincipal?.name}</span>
+              <h1>{rpdata.dbSlogan?.[1].slogan}</h1>
+              <h4>{rpdata.dbSlogan?.[3].slogan}</h4>
+              <p>{rpdata.dbHome?.[0].text}</p>
+              {rpdata?.dbServices?.slice(0,4).map((item, index) => {
+                return (
+                  <SkillBar key={index} heading={item.name} progress="100%">
+                    {item.name}
+                  </SkillBar>
+                );
+              })}
+              <Link to="/contact" className="theme-btn">
+                Free Estimate
+                <BsArrowRight
+                  style={{ fontSize: "20px", marginLeft: "15px" }}
+                />
+              </Link>
             </div>
-        </section>
-    );
+          </div>
+          <div className="col-xl-6 col-12 text-center">
+            <img src={rpdata?.stock?.[6]} alt="Default Img" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default Promo;

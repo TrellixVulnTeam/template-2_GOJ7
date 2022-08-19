@@ -1,88 +1,46 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-unused-expressions */
-import React, { useEffect, useState } from 'react';
-import CategoryBtn from './CategoryBtn';
-import FilterItem from './FilterItem';
-import projectFilterData from './projectFilterData';
+
+import React, { useEffect, useState } from "react";
+import { GlobalDataContext } from "../../context/context";
+import "photoswipe/dist/photoswipe.css";
+import { Gallery, Item } from "react-photoswipe-gallery";
 
 function ProjectFilter() {
-    // STATES
-    const [category, setCategory] = useState('all');
-    const [filteredItem, setFilteredItem] = useState([]);
-
-    useEffect(() => {
-        category === 'all'
-            ? setFilteredItem(projectFilterData)
-            : setFilteredItem(projectFilterData.filter((data) => data.category === category));
-    }, [category]);
-
-    return (
-        <section className="portfolio-wrapper-section section-padding">
-            <div className="container">
-                <div className="row">
-                    <div className="col-12 col-lg-12 text-center">
-                        <div className="section-title-2">
-                            <p>Projects</p>
-                            <h1>Our Recent Projects</h1>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="row mb-20">
-                    <div className="col-12 col-lg-12 text-center">
-                        <div className="portfolio-cat-filter">
-                            <CategoryBtn
-                                className={category === 'all' ? 'btn-active' : null}
-                                name="all"
-                                label="Veiw All"
-                                handleSetCategory={setCategory}
-                            />
-                            <CategoryBtn
-                                className={category === 'bedroom' ? 'btn-active' : null}
-                                name="bedroom"
-                                label="Bedroom Making"
-                                handleSetCategory={setCategory}
-                            />
-                            <CategoryBtn
-                                className={category === 'floor' ? 'btn-active' : null}
-                                name="floor"
-                                label="Floor Making"
-                                handleSetCategory={setCategory}
-                            />
-                            <CategoryBtn
-                                className={category === 'office' ? 'btn-active' : null}
-                                name="office"
-                                label="Office Making"
-                                handleSetCategory={setCategory}
-                            />
-                            <CategoryBtn
-                                className={category === 'home' ? 'btn-active' : null}
-                                name="home"
-                                label="Home Making"
-                                handleSetCategory={setCategory}
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="row grid">
-                    {filteredItem.map(
-                        (item, length) =>
-                            length <= '7' && (
-                                <FilterItem
-                                    key={item.id}
-                                    image={item.image}
-                                    price={item.price}
-                                    name={item.name}
-                                    heading={item.heading}
-                                    category={item.category}
-                                />
-                            )
-                    )}
-                </div>
+  const { rpdata } = React.useContext(GlobalDataContext);
+    
+  return (
+    <section className="portfolio-wrapper-section section-padding">
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-lg-12 text-center">
+            <div className="section-title-2">
+              <p>Projects</p>
+              <h1>Our Recent Projects</h1>
             </div>
-        </section>
-    );
+          </div>
+        </div>
+
+        <div className="container pd-top-150 pd-bottom-100">
+          <div className="gallery-content">
+            <Gallery>
+              {rpdata?.stock?.map((item, index) => (
+                <Item
+                  original={item}
+                  thumbnail={item}
+                  width="1024"
+                  height="768"
+                  padding="10px"
+                >
+                  {({ ref, open }) => (
+                    <img ref={ref} onClick={open} src={item} />
+                  )}
+                </Item>
+              ))}
+            </Gallery>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default ProjectFilter;

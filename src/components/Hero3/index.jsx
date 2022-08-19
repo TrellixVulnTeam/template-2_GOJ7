@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { GlobalDataContext } from "../../context/context";
 import { BsArrowRight } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import heroImg from '../../assets/img/home3/hero-3.jpg';
 import Data from "../../api/Data.json"
 
 function Hero3() {
+    const { rpdata } = React.useContext(GlobalDataContext);
     return (
         <section className="hero-slide-wrapper hero-3">
             <div className="slide-items">
@@ -13,8 +14,8 @@ function Hero3() {
                         <div className="row align-items-center text-center text-xl-start">
                             <div className="col-12 col-lg-8 offset-lg-2 offset-xl-0 col-xl-7">
                                 <div className="hero-contents">
-                                    <p>Welcome To {Data.dbPrincipal.companyName}</p>
-                                    <h1>{Data.slogans[0].slogan}</h1>
+                                    <p className='text-white'>Welcome To {rpdata?.dbPrincipal?.name}</p>
+                                    <h1 className='text-white'>{rpdata?.dbSlogan?.[2].slogan}</h1>
                                     <Link to="/contact" className="theme-btn theme-3">
                                         Free Estimate <BsArrowRight />
                                     </Link>
@@ -26,7 +27,7 @@ function Hero3() {
                             <div className="col-xl-5 d-none d-xl-block">
                                 <div
                                     className="hero-img bg-cover"
-                                    style={{ backgroundImage: `url(${Data.defaultimg.img1})` }}
+                                    style={{ backgroundImage: `url("${rpdata?.stock?.[5]})"` }}
                                 />
                             </div>
                         </div>

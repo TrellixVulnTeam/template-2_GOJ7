@@ -101,3 +101,43 @@
 @import "elements/services";
 @import "elements/team";
 @import "elements/testimonial";
+
+
+.gallery-content{
+	columns: 5 320px;
+  }
+  
+  .gallery-item{
+	columns: 5 320px;
+  }
+  
+  .gallery-content img{
+	margin: 10px;
+  }
+
+  .img-modal{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+  }
+  .modal .modal-dialog { width: 1000px !important; }
+
+  .formContent__checkOpt {
+	margin-right: 10px;
+	margin-left: 10px;
+	display: flex;
+	align-self: center;
+	align-items: center;
+  }
+  
+  .form-check-label {
+	margin-left: 20px !important;
+  }
+
+  .formContent {
+	width: 95% !important;
+  }
+  
+  .content-directorios {
+	align-self: center;
+  }

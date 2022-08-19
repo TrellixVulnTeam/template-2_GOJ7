@@ -1,11 +1,9 @@
-/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-import React from "react";
-import Data from "../../api/Data.json";
-import Map from "./Map";
-import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
+import React, { useContext } from "react";
+import { GlobalDataContext } from "../../context/context";
 import { FaCalendar, FaMapMarkerAlt } from "react-icons/fa";
 
 function ContactUs() {
+  const { rpdata } = useContext(GlobalDataContext);
   return (
     <section className="contact-page-wrap section-padding">
       <div className="container">
@@ -17,7 +15,7 @@ function ContactUs() {
                   <FaMapMarkerAlt />
                 </div>
                 <div className="title">
-                  <h4>{Data.dbPrincipal.address[0].locations}</h4>
+                  <h4>{rpdata?.dbPrincipal?.location?.[0].address}</h4>
                   <span>Location</span>
                 </div>
               </div>
@@ -30,9 +28,13 @@ function ContactUs() {
                   <FaMapMarkerAlt />
                 </div>
                 <div className="title">
-                  {Data.dbPrincipal.phones.map((item, index) => (
-                    <h4 key={index}> {item.phone}</h4>
-                  ))}
+                  {rpdata?.dbPrincipal?.phones?.map((item, index) => {
+                    return (
+                      <a href={`tel:+1${item.phone}`} key={index}>
+                        <h4>{item.phone}</h4>
+                      </a>
+                    );
+                  })}
                   <span>Phone</span>
                 </div>
               </div>
@@ -45,31 +47,10 @@ function ContactUs() {
                   <FaCalendar />
                 </div>
                 <div className="title">
-                    <h4 > {Data.dbPrincipal.workdays}</h4>
-                    <h4 > {Data.dbPrincipal.workHours}</h4>
+                  <h4> {rpdata?.dbPrincipal?.workdays?.[0].day}</h4>
+                  <h4> {rpdata?.dbPrincipal?.workHours?.[0].hour}</h4>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-12 col-lg-12">
-            <div className="contact-map-wrap">
-            <div id="map">
-                <h2 className="text-center pt-1 pb-3">{Data.dbPrincipal.miles}</h2>
-            <iframe
-                title="map"
-                src={Data.dbPrincipal.address[0].iframe}
-                frameBorder="0"
-                style={{
-                    border: '0',
-                    width: '100%',
-                }}
-                allowFullScreen=""
-                aria-hidden="false"
-            />
-        </div>
             </div>
           </div>
         </div>

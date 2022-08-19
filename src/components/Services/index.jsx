@@ -1,75 +1,61 @@
 import { useState,useContext } from "react"
 import Modal from "../../components/Services/Modal";
-import { Link } from "react-router-dom";
-import { BiArrowBack } from "react-icons/bi";
-import { BsArrowRight } from 'react-icons/bs';
-
 import ServicePageArea from "./ServicePageArea"
 
-import Data from "../../api/Data.json";
 import { GlobalDataContext } from "../../context/context";
 
 
-const Index = (props) => {
+const ServicesCard = (props) => {
+  const { rpdata } = useContext(GlobalDataContext);
 
-  const {rpdata} = useContext(GlobalDataContext);
-
-  console.log(rpdata);
-  let publicUrl = process.env.PUBLIC_URL + "/";
   const [model, setModel] = useState(false);
   const [tempdata, setTempdata] = useState([]);
-  const getData = (img, title, description, id) => {
-    let temData = [img, title, description, id];
+  const getData = (img, name, description, id) => {
+    let temData = [img, name, description, id];
     setTempdata((itme) => [1, ...temData]);
     return setModel(true);
   };
 
+  let publicUrl = process.env.PUBLIC_URL + "/";
+
   return (
-    <>
-      <section className="our-service-wrapper section-padding mtm-30">
-            <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div
-                className="section-title-wrapper text-center mb-55 wow fadeInUp"
-                data-wow-delay=".3s"
-              >
-                <h5 className="tp-section-subtitle section__sm__title common-yellow-shape mb-20 heading-color-black">
-                  {Data.slogans.slogan1}
-                  
-                </h5>
-                <h1>{rpdata.dbPrincipal.companyName}</h1>
-                <h2 className="tp-section-title heading-color-black">
-                  Our Services
-                </h2>
+    <div className="blog-page-area pd-top-120 go-top">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+            <div className="product-search-inner bg-main">
+              <div className="row custom-gutters-20 text-center">
+                <div className="col-md-12 align-self-center">
+                  <h2 className="text-white">Our Services</h2>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="row">
+            <div className="row">
+
+            <div className="row">
             {props.itemServices
-              ? Data.slice(0, props.itemServices).map((item, index) => {
+              ? rpdata.slice(0, props.itemServices).map((item, index) => {
                   return (
                     <div className="col-lg-4 col-md-6" key={index}>
                       <div className="single-product-wrap style-bottom-radius">
                         <div className="thumb">
-                          <img src={item.image} alt={item.title} />
+                          <img src={item.description[0].img} alt={item.name} className="img-card-services" />
                         </div>
                         <div className="product-details-inner">
-                          <h4 className="text-capitalize">{item.title}</h4>
+                          <h4 className="text-capitalize">{item.name}</h4>
                           <p className="pb-4 text-truncate">
                             {item.description[0].text}
                           </p>
                           <ul>
-                            <li>{item.description[0].items.value}</li>
                           </ul>
                           <button
                             className="btn btn-base read-more"
                             onClick={() =>
                               getData(
-                                item.description[0].image,
-                                item.title,
+                                item.description[0].img,
+                                item.name,
                                 item.description[0].text,
-                                item.description.items.map((item) => item.value),
+                                item.description.lists.map((item) => item),
                                 item.id
                               )
                             }
@@ -81,25 +67,25 @@ const Index = (props) => {
                     </div>
                   );
                 })
-              : Data.dbServices.services.map((item, index) => {
+              : rpdata?.dbServices?.map((item, index) => {
                   return (
                     <ServicePageArea
                     key={index}
-                    service_image_num={item.description[0].image}
+                    service_image_num={item.description[0].img}
                     ser_icon_img="home"
-                    ser_title={item.title}
+                    ser_title={item.name}
                     ser_description={item.description[0].text}
                     event_click={() =>
                       getData(
-                        item.description[0].image,
-                        item.title,
+                        item.description[0].img,
+                        item.name,
                         item.description.map((item) => {
                           return (
                             <div>
                               <p>{item.text}</p>
                               {
-                                item.items ?
-                                item.items.map ((item) => <li><BsArrowRight className="text-orange"/>{item.value}</li>)
+                                item.lists ?
+                                item.lists.map ((item) => <li>{item}</li>)
                                 : null
                               }
                               <br />
@@ -116,7 +102,7 @@ const Index = (props) => {
             {model === true ? (
               <Modal
                 img={tempdata[1]}
-                title={tempdata[2]}
+                name={tempdata[2]}
                 description={tempdata[3]}
                 itemservies={tempdata[4]}
                 hide={() => setModel(false)}
@@ -125,10 +111,12 @@ const Index = (props) => {
               ""
             )}
           </div>
+            </div>
+          </div>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 };
 
-export default Index;
+export default ServicesCard;

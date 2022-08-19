@@ -7,10 +7,6 @@ const MenuContent = () => (
     <div className="mobile-menu-bottom">
         <ul>
             <li className="bottom-item">
-                <AiOutlineMail className="icon" />
-                {Data.dbPrincipal.emails[0].email}
-            </li>
-            <li className="bottom-item">
                 <AiOutlinePhone className="icon" />
                 {Data.dbPrincipal.phones[0].phone}
             </li>

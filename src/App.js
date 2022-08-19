@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from "react";
+import React, { Component, useState, useEffect, useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ScrollIndicator from "./components/ScrollIndicator";
 import ScrollToTopRoute from "./components/ScrollTopRoute";
@@ -7,14 +7,12 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
-import Axios from "axios"
-import { GlobalDataContext } from "./context/context";
-
+import axios from "axios"
+import { GlobalDataContext } from './context/context';
 
 function App() {
-
-
-  const id = "62d0c32897c49128826130c6"
+ 
+  const id = "62ffb6a1092aee7d877b8811"
   const [rpdata, setrpdata] = useState({});
 
 
@@ -24,7 +22,7 @@ function App() {
     async function fetchData() {
     
       try {
-        const response = await Axios({
+        const response = await axios({
           baseURL: "https://paginasserver.herokuapp.com/api",
           url: `/paginas/${id}`,
           method: "get"
@@ -44,31 +42,29 @@ function App() {
 
   return (
     <>
-       <GlobalDataContext.Provider value={{ rpdata }}>
-
-            <Router>
-              <ScrollToTopRoute />
-              <Switch>
-                <Route exact path="/">
-                  <Home />
-                </Route>
-                <Route exact path="/about">
-                  <About />
-                </Route>
-                <Route exact path="/services">
-                  <Services />
-                </Route>
-                <Route exact path="/projects">
-                  <Projects />
-                </Route>
-                <Route exact path="/contact">
-                  <Contact />
-                </Route>
-              </Switch>
-            </Router>
-            <ScrollIndicator />
-
-       </GlobalDataContext.Provider>
+     <GlobalDataContext.Provider value={{ rpdata }}>
+      <Router>
+        <ScrollToTopRoute />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/services">
+            <Services />
+          </Route>
+          <Route exact path="/projects">
+            <Projects />
+          </Route>
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
+        </Switch>
+      </Router>
+      <ScrollIndicator />
+      </GlobalDataContext.Provider>
     </>
   );
 }

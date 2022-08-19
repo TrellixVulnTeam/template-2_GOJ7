@@ -1,18 +1,29 @@
-import React from 'react';
-import bannerBg from '../assets/img/page-banner.jpg';
+import React, { useContext } from "react";
+import { GlobalDataContext } from "../context/context";
 import ContactForm from '../components/ContactForm';
 import ContactUs from '../components/ContactUs';
 import Footer1 from '../components/Footer';
 import Header1 from '../components/Header';
 import PageBanner from '../components/PageBanner';
+import Map from '../components/ContactUs/Map';
 
 function Contact() {
+    const { rpdata } = useContext(GlobalDataContext);
     return (
         <>
             <Header1 />
-            <PageBanner bannerBg={bannerBg} heading="Contact Us" currentPage="Contact" />
+            <PageBanner bannerBg={`${rpdata?.stock?.[1]}`} heading="Contact Us" currentPage="Contact" />
             <ContactUs />
-            <ContactForm title="Write Message" heading="Get In Touch" />
+            <Map/>
+            <div className="row">
+                <div className="col-lg-3"></div>
+                <div className="col-lg-6">
+                    <h2 className="text-center pt-50">Get In Tocuch!</h2>
+                <ContactForm title="Write Message" heading="Get In Touch" />
+                </div>
+                <div className="col-lg-3"></div>
+            </div>
+            
             <Footer1 />
         </>
     );

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Logo from '../../assets/images/logo/logoColor.png';
+import React, { useContext, useState } from "react";
+import { GlobalDataContext } from "../../context/context";
+import { Link } from "react-router-dom";
+import Logo from '../../assets/images/logo/logowh.png';
 import MobileMenu from '../MobileMenu';
 import OffsetMenu from '../OffsetMenu';
 import MainMenu from './MainMenu';
@@ -12,6 +13,9 @@ function Header1() {
     const handleOffset = () => {
         setOffset(!offset);
     };
+
+    const { rpdata } = useContext(GlobalDataContext);
+
     return (
         <>
             <OffsetMenu
@@ -23,9 +27,9 @@ function Header1() {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-8 col-lg-3">
-                            <div className="logo">
+                            <div className="logo-header">
                                 <Link to="/">
-                                    <img src={Logo} alt="logo" />
+                                    <img src={rpdata?.dbPrincipal?.logo} alt="logo" />
                                 </Link>
                             </div>
                         </div>
@@ -36,34 +40,21 @@ function Header1() {
                         </div>
                         <div className="col-12 d-none d-md-block col-lg-9">
                             <div className="header-contact-info text-lg-right">
-                                <div className="single-element">
+                                
                                   {
-                                    Data.dbPrincipal.phones.slice(0,1).map((phone, index) => {
+                                    rpdata.dbPrincipal?.phones.map((phone, index) => {
                                         return (
+                                            <div className="single-element">
                                             <a key={index} href={`tel:${phone.phone}`}>
                                             <i className="fa fa-phone" />
                                             <span>{phone.phone}</span>
                                             </a>
+                                            <span>Phone</span>
+                                            </div>
                                         )
                                         }
                                     )
                                   }
-                                    <span>Call Us Now</span>
-                                </div>
-                                <div className="single-element">
-                                {
-                                    Data.dbPrincipal.emails.slice(0,1).map((phone, index) => {
-                                        return (
-                                            <a key={index} href={`tel:${phone.email}`}>
-                                            <i className="fa fa-phone" />
-                                            <span>{phone.email}</span>
-                                            </a>
-                                        )
-                                        }
-                                    )
-                                  }
-                                    <span>Mail</span>
-                                </div>
                                 <div className="header-btn d-inline">
                                     <Link to="/contact" className="theme-btn">
                                         Free Estimate

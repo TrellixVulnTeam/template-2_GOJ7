@@ -1,10 +1,11 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 
 function PageBanner({ bannerBg, currentPage, heading }) {
     return (
         <section
             className="page-banner-wrap bg-cover"
-            style={{ backgroundImage: `url(${bannerBg})` }}
+            style={{ backgroundImage: `url("${bannerBg}")` }}
         >
             <div className="container">
                 <div className="row">
@@ -13,7 +14,7 @@ function PageBanner({ bannerBg, currentPage, heading }) {
                             <nav>
                                 <ol className="breadcrumb">
                                     <li className="breadcrumb-item">
-                                        <a href="index.html">Home</a>
+                                    <Link to="/">Home</Link>
                                     </li>
                                     <li className="breadcrumb-item active" aria-current="page">
                                         {currentPage}
