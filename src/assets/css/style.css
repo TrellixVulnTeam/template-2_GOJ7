@@ -1215,8 +1215,8 @@ p {
 
 /* background */
 .bg-cover {
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
   position: relative;
   background-position: center;
 }
