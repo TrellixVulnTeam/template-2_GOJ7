@@ -9,6 +9,9 @@ import {
   FaCreditCard,
   FaArrowRight,
 } from "react-icons/fa";
+
+import LiveChat from "../botonWhatsapp/BotonWhatsapp"
+
 function Footer1() {
   const { rpdata } = useContext(GlobalDataContext);
 
@@ -186,7 +189,7 @@ function Footer1() {
                 <a href="#top">
                   <img
                     src={rpdata?.dbPrincipal?.logo}
-                    className="p-2 logo_footer"
+                    className="p-2 logo_footer bg-white rounded-3"
                     alt="img"
                   />
                 </a>
@@ -202,7 +205,7 @@ function Footer1() {
           </div>
         </div>
       </div>
-      <div class="elfsight-app-d8c23125-1a13-437c-979a-500f607750cb"></div>
+      <LiveChat/>
       <div className="visor_Counter">
         <div class="elfsight-app-b8a56f1e-13f0-420d-a542-091d4e218b2d"></div>
       </div>
