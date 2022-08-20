@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
-import Modal from "react-bootstrap/Modal";
 import { GlobalDataContext } from "../../context/context";
+import Modal from "react-bootstrap/Modal";
 import Form from "../../components/ContactForm/index"
 
 function ModalComponent() {
