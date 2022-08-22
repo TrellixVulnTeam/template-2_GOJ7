@@ -32,7 +32,7 @@ function Promo() {
             </div>
           </div>
           <div className="col-xl-6 col-12 text-center">
-            <img src={rpdata?.stock?.[6]} alt="Default Img" />
+            <img src={rpdata?.gallery?.[8]} alt="Default Img" />
           </div>
         </div>
       </div>

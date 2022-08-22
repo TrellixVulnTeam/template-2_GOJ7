@@ -11,12 +11,12 @@ function SkillSet() {
                 <div
                     className="skill-bg pt-100 pb-100 bg-center bg-cover bg-overlay text-white"
                     style={{
-                        backgroundImage: `url("${rpdata?.stock?.[0]})"`,
+                        backgroundImage: `url("${rpdata?.gallery?.[0]})"`,
                     }}
                 >
                     <div className="row align-items-center">
                         <div className="col-xl-6 col-12 text-center d-none d-xl-block">
-                            <img src={rpdata?.stock?.[1]} className="mlm-100" alt="" />
+                            <img src={rpdata?.gallery?.[1]} className="mlm-100" alt="" />
                         </div>
                         <div className="col-xl-6 offset-1 offset-xl-0 col-10 pr-lg-5">
                             <div className="block-contents mb-20">

@@ -22,7 +22,7 @@ function ProjectFilter() {
         <div className="container pd-top-150 pd-bottom-100">
           <div className="gallery-content">
             <Gallery>
-              {rpdata?.stock?.map((item, index) => (
+              {rpdata?.gallery?.map((item, index) => (
                 <Item
                   original={item}
                   thumbnail={item}
