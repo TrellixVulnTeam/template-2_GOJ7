@@ -29,7 +29,7 @@ function Footer1() {
       link: "/services",
     },
     {
-      title: "Gallery",
+      title: "stock",
       link: "/projects",
     },
     {

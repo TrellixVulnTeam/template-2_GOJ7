@@ -27,7 +27,7 @@ function Hero3() {
                             <div className="col-xl-5 d-none d-xl-block">
                                 <div
                                     className="hero-img bg-cover"
-                                    style={{ backgroundImage: `url("${rpdata?.gallery?.[5]})"` }}
+                                    style={{ backgroundImage: `url("${rpdata?.stock?.[5]})"` }}
                                 />
                             </div>
                         </div>
