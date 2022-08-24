@@ -189,7 +189,7 @@ function Footer1() {
                 <a href="#top">
                   <img
                     src={rpdata?.dbPrincipal?.logo}
-                    className="p-2 logo_footer bg-white rounded-3"
+                    className="p-2 logo_footer rounded-3"
                     alt="img"
                   />
                 </a>
