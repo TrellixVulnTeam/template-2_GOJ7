@@ -102,6 +102,8 @@
 @import "elements/team";
 @import "elements/testimonial";
 
+@import url("https:////fonts.googleapis.com/css?family=Lobster");
+
 
 .gallery-content{
 	columns: 5 320px;
@@ -143,4 +145,9 @@
 
   .gxWltO{
 	bottom: 110px !important;
+  }
+
+  .text-style{
+	font-family: lobster !important;
+	font-size: 65px !important;
   }

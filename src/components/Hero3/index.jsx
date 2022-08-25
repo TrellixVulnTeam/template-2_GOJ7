@@ -14,6 +14,7 @@ function Hero3() {
                         <div className="row align-items-center text-center text-xl-start">
                             <div className="col-12 col-lg-8 offset-lg-2 offset-xl-0 col-xl-7">
                                 <div className="hero-contents">
+                                    <span className="text-white text-style">{rpdata?.dbSlogan?.[7].slogan}</span>
                                     <p className='text-white'>Welcome To {rpdata?.dbPrincipal?.name}</p>
                                     <h1 className='text-white'>{rpdata?.dbSlogan?.[2].slogan}</h1>
                                     <Link to="/contact" className="theme-btn theme-3">
