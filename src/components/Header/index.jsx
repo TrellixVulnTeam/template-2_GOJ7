@@ -29,7 +29,7 @@ function Header1() {
                         <div className="col-8 col-lg-3">
                             <div className="logo-header">
                                 <Link to="/">
-                                    <img src={rpdata?.dbPrincipal?.logo} alt="logo" />
+                                    <img src={rpdata?.dbPrincipal?.logo} alt="logo" className="img-responsive-content" />
                                 </Link>
                             </div>
                         </div>
