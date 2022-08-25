@@ -25,7 +25,7 @@ function Header1() {
             <header className="header-wrap header-1">
                 <Topbar />
                 <div className="container">
-                    <div className="row align-items-center">
+                    <div className="row align-items-center bg-black">
                         <div className="col-8 col-lg-3">
                             <div className="logo-header">
                                 <Link to="/">
@@ -46,10 +46,10 @@ function Header1() {
                                         return (
                                             <div className="single-element">
                                             <a key={index} href={`tel:${phone.phone}`}>
-                                            <i className="fa fa-phone" />
-                                            <span>{phone.phone}</span>
+                                            <i className="fa fa-phone text-white" />
+                                            <span className="text-white">{phone.phone}</span>
                                             </a>
-                                            <span>Phone</span>
+                                            <span className="text-white">Phone</span>
                                             </div>
                                         )
                                         }

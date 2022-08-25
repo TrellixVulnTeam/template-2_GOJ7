@@ -14,8 +14,8 @@ function OffsetMenu({ className, handleOffset }) {
       <div className="offset-menu-wrapper text-white container-fluid">
         <div className="offset-menu-header">
           <div className="offset-menu-logo">
-            <Link to="/">
-              <img src={rpdata?.dbPrincipal?.logo} alt="logo" />
+            <Link to="/"> 
+              <img src={rpdata?.dbPrincipal?.logo} alt="logo" className="bg-black" />
             </Link>
           </div>
         </div>

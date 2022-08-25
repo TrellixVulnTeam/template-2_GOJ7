@@ -17,7 +17,7 @@ function ModalComponent() {
             <div className="text-end">
               <p className="fs-5" style={{cursor:"pointer"}} onClick={handleClose}>X</p>
             </div>
-            <div className="text-center">
+            <div className="text-center bg-black">
               <img src={rpdata?.dbPrincipal?.logo} width={"50%"} />
             </div>
           </div>

@@ -2073,7 +2073,7 @@ a img.aligncenter {
 
 .offset-menu img {
   display: inline-block;
-  background: #fff;
+  background: black !important;
   padding: 10px 20px;
 }
 
@@ -3884,7 +3884,7 @@ header.header-3 .mobile-menu-bar {
 
 .offset-menu img {
   display: inline-block;
-  background: #fff;
+  background: black !important;
   padding: 10px 20px;
 }
 
@@ -4094,7 +4094,7 @@ header.header-3 .mobile-menu-bar {
   content: "";
   right: 0;
   top: -30%;
-  background-color: #001248;
+  background-color: #00FFD4;
   z-index: -1;
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
