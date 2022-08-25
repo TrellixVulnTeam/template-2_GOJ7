@@ -14,7 +14,7 @@ function About() {
     return (
         <>
             <Header1 />
-            <PageBanner bannerBg={`${rpdata?.stock?.[4]}`} currentPage="About Us" heading="About Us" />
+            <PageBanner bannerBg={`${rpdata?.gallery?.[4]}`} currentPage="About Us" heading="About Us" />
             <AboutFeatured />
             <Approch />
             <SkillSet />

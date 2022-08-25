@@ -12,7 +12,7 @@ function Contact() {
     return (
         <>
             <Header1 />
-            <PageBanner bannerBg={`${rpdata?.stock?.[9]}`} heading="Contact Us" currentPage="Contact" />
+            <PageBanner bannerBg={`${rpdata?.gallery?.[9]}`} heading="Contact Us" currentPage="Contact" />
             <ContactUs />
             <Map/>
             <div className="row">

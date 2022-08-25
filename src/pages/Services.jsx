@@ -10,7 +10,7 @@ function Services() {
     return (
         <>
             <Header1 />
-            <PageBanner bannerBg={`${rpdata?.stock?.[1]}`} currentPage="Services" heading="Services" />
+            <PageBanner bannerBg={`${rpdata?.gallery?.[1]}`} currentPage="Services" heading="Services" />
             <ServicesCard />
             <Footer1 />
         </>

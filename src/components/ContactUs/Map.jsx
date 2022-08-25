@@ -8,7 +8,7 @@ function Map() {
     <div className="container">
       <div className="row">
         <h2 className="text-center">
-          We Cover {rpdata?.dbPrincipal?.miles} Miles Around Loganville, GA
+          We Cover {rpdata?.dbPrincipal?.miles} Miles Around {rpdata?.dbPrincipal?.location?.[0].address}
         </h2>
         <iframe src={rpdata?.dbPrincipal?.location?.[0].url} style={{ width: "100%", height: "400px" }} />
       </div>
