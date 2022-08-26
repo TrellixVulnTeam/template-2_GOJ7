@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalDataContext } from "../../context/context";
-import { FaCalendar, FaMapMarkerAlt } from "react-icons/fa";
+import { FaCalendar, FaMapMarkerAlt, FaPhone, FaPhoneAlt } from "react-icons/fa";
 
 function ContactUs() {
   const { rpdata } = useContext(GlobalDataContext);
@@ -25,7 +25,7 @@ function ContactUs() {
             <div className="single-contact-card card1">
               <div className="top-part">
                 <div className="icon">
-                  <FaMapMarkerAlt />
+                  <FaPhoneAlt />
                 </div>
                 <div className="title">
                   {rpdata?.dbPrincipal?.phones?.map((item, index) => {

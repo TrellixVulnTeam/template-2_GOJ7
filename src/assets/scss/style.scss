@@ -151,3 +151,54 @@
 	font-family: lobster !important;
 	font-size: 65px !important;
   }
+
+  .text-style-2{
+	font-family: lobster !important;
+	font-size: 25px !important;
+	font-weight: 300;
+  }
+
+  .text-email{
+	font-size: 14px;
+	text-transform: lowercase;
+  }
+
+  .content-info-page{
+	overflow: hidden;
+  }
+
+
+  .content-info{
+	display: none;
+  }
+
+  @media (max-width:767px) {
+	.content-logo{
+		width: 40%;
+		text-align: center;
+	  }
+	
+	  .content-logo img{
+		position: relative;
+		width: 300px;
+	  }
+
+	  header.header-1 .logo-header{
+		width: 140px !important;
+	  }
+	
+	  .content-info{
+		width: 60%;
+		display: block;
+		display: flex;
+		align-self: center;
+		justify-items: center;
+		align-content: center;
+		text-align: center;
+	  }
+	  .content-info-email-phone a{
+		margin-right: 14px;
+	  }
+  }
+
+  
