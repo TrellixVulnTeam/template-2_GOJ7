@@ -35,38 +35,12 @@ function Header1() {
                     </Link>
                   </div>
                 </div>
-                <div className="content-info name-content">
-                  <div className="content-info-page">
-                    <div className="single-element">
-                      <h6
-                        className="text-black text-style-2"
-                        style={{ fontSize: "20px" }}
-                      >
-                        {rpdata?.dbPrincipal?.name}
-                      </h6>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
             <div className="col-2 d-block d-lg-none">
               <div className="mobile-nav-wrap">
                 <MobileMenu />
               </div>
-            </div>
-            <div className="col-12 justify-content-center content-info-email-phone">
-              <a href={`tel:${rpdata.dbPrincipal?.phones[0].phone}`}>
-                <i className="fa fa-phone text-email" />
-                <span className="text-email">
-                  {rpdata.dbPrincipal?.phones?.[0].phone}
-                </span>
-              </a>
-              <a href={`mailto:${rpdata.dbPrincipal?.emails[0].email}`}>
-                <i className="fa fa-envelope text-email" />
-                <span className="text-email">
-                  {rpdata.dbPrincipal?.emails[0].email}
-                </span>
-              </a>
             </div>
             <div className="col-12 d-none d-md-block col-lg-9">
               <div className="header-contact-info text-lg-right">
