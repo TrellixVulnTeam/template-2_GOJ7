@@ -168,7 +168,11 @@
   }
 
 
-  .content-info{
+  .content-info-email-phone{
+	display: none ;
+  }
+
+  .content-info-page{
 	display: none;
   }
 
@@ -198,6 +202,17 @@
 	  }
 	  .content-info-email-phone a{
 		margin-right: 14px;
+	  }
+
+	  .content-info-email-phone{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	  }
+	
+	  .content-info-page{
+		display: block;
 	  }
   }
 

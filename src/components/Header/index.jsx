@@ -35,7 +35,7 @@ function Header1() {
                     </Link>
                   </div>
                 </div>
-                <div className="content-info">
+                <div className="content-info name-content">
                   <div className="content-info-page">
                     <div className="single-element">
                       <h6
