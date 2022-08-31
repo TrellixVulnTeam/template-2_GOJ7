@@ -18,7 +18,7 @@ function Contact() {
             <div className="row">
                 <div className="col-lg-3"></div>
                 <div className="col-lg-6">
-                    <h2 className="text-center pt-50">Get In Tocuch!</h2>
+                    <h2 className="text-center pt-50">Get In Touch!</h2>
                 <ContactForm title="Write Message" heading="Get In Touch" />
                 </div>
                 <div className="col-lg-3"></div>

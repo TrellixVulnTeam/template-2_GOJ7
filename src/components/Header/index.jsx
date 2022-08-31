@@ -44,11 +44,18 @@ function Header1() {
             </div>
             <div className="col-12 d-none d-md-block col-lg-9">
               <div className="header-contact-info text-lg-right">
+              <div className="single-element">
+                      <a >
+                        <i className="fa fa-map" style={{paddingRight:10}}/>
+                        <span>{rpdata?.dbPrincipal?.location?.[0].address}</span>
+                      </a>
+                      <span>Location</span>
+                    </div>
                 {rpdata.dbPrincipal?.phones.map((phone, index) => {
                   return (
                     <div className="single-element">
                       <a key={index} href={`tel:${phone.phone}`}>
-                        <i className="fa fa-phone" />
+                        <i className="fa fa-phone" style={{paddingRight:10}}/>
                         <span>{phone.phone}</span>
                       </a>
                       <span>Phone</span>
