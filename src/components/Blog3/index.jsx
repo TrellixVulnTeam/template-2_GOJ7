@@ -1,6 +1,6 @@
 import React from "react";
 import { GlobalDataContext } from "../../context/context";
-import NavLink from 'react-router-dom/NavLink';
+import {NavLink} from 'react-router-dom';
 
 function Blog3() {
     const { rpdata } = React.useContext(GlobalDataContext);

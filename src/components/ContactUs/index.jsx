@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalDataContext } from "../../context/context";
-import { FaCalendar, FaMapMarkerAlt, FaPhone, FaPhoneAlt } from "react-icons/fa";
+import { FaCalendar, FaMapMarkerAlt, FaPhone, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 function ContactUs() {
   const { rpdata } = useContext(GlobalDataContext);
@@ -53,6 +53,23 @@ function ContactUs() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="row">
+        <div className="col-lg-3 col-md-6 col-12"></div>
+        <div className="col-lg-6 col-md-6 col-12">
+        <div className="single-contact-card card1">
+              <div className="top-part">
+                <div className="icon">
+                  <FaEnvelope />
+                </div>
+                <div className="title">
+                  <h4> Email</h4>
+                 <a  href={`mailto:${rpdata?.dbPrincipal?.emails?.[1].email}`}><h4 style={{fontSize:"15px"}}> {rpdata?.dbPrincipal?.emails?.[1].email}</h4></a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div className="col-lg-3 col-md-6 col-12"></div>
         </div>
       </div>
     </section>

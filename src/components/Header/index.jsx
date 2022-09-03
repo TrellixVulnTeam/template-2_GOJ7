@@ -1,12 +1,10 @@
 import React, { useContext, useState } from "react";
 import { GlobalDataContext } from "../../context/context";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/images/logo/logowh.png";
 import MobileMenu from "../MobileMenu";
 import OffsetMenu from "../OffsetMenu";
 import MainMenu from "./MainMenu";
 import Topbar from "./Topbar";
-import Data from "../../api/Data.json";
 
 function Header1() {
   const [offset, setOffset] = useState(false);

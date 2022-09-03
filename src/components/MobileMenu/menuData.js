@@ -1,6 +1,3 @@
-import React from 'react';
-import { CgChevronDown, CgChevronLeft } from 'react-icons/cg';
-
 const menuData = [
     {
         title: 'Home',
@@ -14,6 +11,21 @@ const menuData = [
     {
         title: 'Services',
         path: '/services',
+        subNav: [
+            {
+                title: 'Home One',
+                path: '/',
+            },
+            {
+                title: 'Home Two',
+                path: '/home-2',
+            },
+
+            {
+                title: 'Home Three',
+                path: '/home-3',
+            },
+        ],
     },
 
     {

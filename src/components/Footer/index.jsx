@@ -8,9 +8,10 @@ import {
   FaCalendar,
   FaCreditCard,
   FaArrowRight,
+  FaEnvelope
 } from "react-icons/fa";
 
-import LiveChat from "../botonWhatsapp/BotonWhatsapp"
+import LiveChat from "../botonWhatsapp/BotonWhatsapp";
 
 function Footer1() {
   const { rpdata } = useContext(GlobalDataContext);
@@ -101,7 +102,13 @@ function Footer1() {
                       <FaArrowRight />
                     </div>
                     <div className="contact-info">
-                      <NavLink to="/services">{item.name}</NavLink>{" "}
+                      <NavLink
+                        to={`/services/${item.name
+                          .replace(" ", "-")
+                          .toLowerCase()}`}
+                      >
+                        {item.name}
+                      </NavLink>{" "}
                     </div>
                   </div>
                 ))}
@@ -135,6 +142,16 @@ function Footer1() {
                     </div>
                   );
                 })}
+                <div className="single-contact-info">
+                  <div className="icon">
+                    <FaEnvelope />
+                  </div>
+                  <div className="contact-info">
+                    <a href={`mailto:${rpdata?.dbPrincipal?.emails?.[1].email}`}>
+                      <span>{rpdata?.dbPrincipal?.emails?.[1].email}</span>
+                    </a>
+                  </div>
+                </div>
                 {rpdata?.dbPrincipal?.workdays?.map((item, index) => {
                   return (
                     <div className="single-contact-info">
@@ -205,7 +222,7 @@ function Footer1() {
           </div>
         </div>
       </div>
-      <LiveChat/>
+      <LiveChat />
       <div className="visor_Counter">
         <div class="elfsight-app-b8a56f1e-13f0-420d-a542-091d4e218b2d"></div>
       </div>

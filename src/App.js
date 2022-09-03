@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect, useContext } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ScrollIndicator from "./components/ScrollIndicator";
 import ScrollToTopRoute from "./components/ScrollTopRoute";
 import About from "./pages/About";
@@ -9,6 +9,7 @@ import Projects from "./pages/Projects";
 import Services from "./pages/Services";
 import axios from "axios"
 import { GlobalDataContext } from './context/context';
+import { ServicesDetail } from "./components/section-components/ServicesDetail";
 
 function App() {
  
@@ -42,28 +43,17 @@ function App() {
 
   return (
     <>
-     <GlobalDataContext.Provider value={{ rpdata }}>
+    <GlobalDataContext.Provider value={{ rpdata }}>
       <Router>
-        <ScrollToTopRoute />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/services">
-            <Services />
-          </Route>
-          <Route exact path="/projects">
-            <Projects />
-          </Route>
-          <Route exact path="/contact">
-            <Contact />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />}></Route>
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services/:id" element={<ServicesDetail />} />
+        </Routes>
       </Router>
-      <ScrollIndicator />
       </GlobalDataContext.Provider>
     </>
   );
