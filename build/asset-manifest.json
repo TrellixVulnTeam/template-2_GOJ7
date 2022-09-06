@@ -6,19 +6,19 @@
     "runtime-main.js": "/static/js/runtime-main.13479a92.js",
     "runtime-main.js.map": "/static/js/runtime-main.13479a92.js.map",
     "static/css/2.2637d59f.chunk.css": "/static/css/2.2637d59f.chunk.css",
-    "static/js/2.932644d0.chunk.js": "/static/js/2.932644d0.chunk.js",
-    "static/js/2.932644d0.chunk.js.map": "/static/js/2.932644d0.chunk.js.map",
+    "static/js/2.cfc63f88.chunk.js": "/static/js/2.cfc63f88.chunk.js",
+    "static/js/2.cfc63f88.chunk.js.map": "/static/js/2.cfc63f88.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.2637d59f.chunk.css.map": "/static/css/2.2637d59f.chunk.css.map",
     "static/css/main.3feb1907.chunk.css.map": "/static/css/main.3feb1907.chunk.css.map",
-    "static/js/2.932644d0.chunk.js.LICENSE.txt": "/static/js/2.932644d0.chunk.js.LICENSE.txt",
+    "static/js/2.cfc63f88.chunk.js.LICENSE.txt": "/static/js/2.cfc63f88.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/hero-pattern.eee2298a.png",
     "static/media/logowh.64411b92.png": "/static/media/logowh.64411b92.png"
   },
   "entrypoints": [
     "static/js/runtime-main.13479a92.js",
     "static/css/2.2637d59f.chunk.css",
-    "static/js/2.932644d0.chunk.js",
+    "static/js/2.cfc63f88.chunk.js",
     "static/css/main.3feb1907.chunk.css",
     "static/js/main.09810fd3.chunk.js"
   ]
