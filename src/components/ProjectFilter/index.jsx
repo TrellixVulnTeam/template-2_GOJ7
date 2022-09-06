@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from "react";
 import { GlobalDataContext } from "../../context/context";
-import "photoswipe/dist/photoswipe.css";
 import { Gallery, Item } from "react-photoswipe-gallery";
 
 function ProjectFilter() {
