@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { GlobalDataContext } from "../../context/context";
+import "photoswipe/dist/photoswipe.css";
 import { Gallery, Item } from "react-photoswipe-gallery";
 
 function ProjectFilter() {
@@ -21,7 +22,7 @@ function ProjectFilter() {
         <div className="container pd-top-150 pd-bottom-100">
           <div className="gallery-content">
             <Gallery>
-              {rpdata?.stock?.map((item, index) => (
+              {rpdata?.gallery?.map((item, index) => (
                 <Item
                   original={item}
                   thumbnail={item}

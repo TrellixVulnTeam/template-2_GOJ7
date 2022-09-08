@@ -13,7 +13,7 @@ import { ServicesDetail } from "./components/section-components/ServicesDetail";
 
 function App() {
  
-  const id = "62ffb6a1092aee7d877b8811"
+  const id = "631a24e27880d4039f9a0571"
   const [rpdata, setrpdata] = useState({});
 
 

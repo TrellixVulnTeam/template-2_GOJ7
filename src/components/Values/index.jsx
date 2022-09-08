@@ -23,7 +23,7 @@ function Approch() {
               <div
                 className="card-thumb bg-cover"
                 style={{
-                  backgroundImage: `url(${rpdata?.stock?.[0]})`,
+                  backgroundImage: `url(${rpdata?.gallery?.[0]})`,
                 }}
               />
               <div className="content">
@@ -44,7 +44,7 @@ function Approch() {
               <div
                 className="card-thumb bg-cover"
                 style={{
-                  backgroundImage: `url(${rpdata?.stock?.[1]})`,
+                  backgroundImage: `url(${rpdata?.gallery?.[1]})`,
                 }}
               />
               <div className="content">
@@ -65,7 +65,7 @@ function Approch() {
               <div
                 className="card-thumb bg-cover"
                 style={{
-                  backgroundImage: `url(${rpdata?.stock?.[2]})`,
+                  backgroundImage: `url(${rpdata?.gallery?.[2]})`,
                 }}
               />
               <div className="content">

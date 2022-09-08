@@ -9,6 +9,9 @@ import {
   FaCreditCard,
   FaArrowRight,
 } from "react-icons/fa";
+
+import WhatsappChat from "../botonWhatsapp/BotonWhatsapp"
+
 function Footer1() {
   const { rpdata } = useContext(GlobalDataContext);
 
@@ -164,6 +167,7 @@ function Footer1() {
                     <span>{rpdata?.dbPrincipal?.paymentMethod}</span>
                   </div>
                 </div>
+                <img src="https://firebasestorage.googleapis.com/v0/b/gallery-ae580.appspot.com/o/Directorios%2Fcredit-cards-paypal-zelle-venmo.png?alt=media&token=1d17a33d-f283-4c49-a0eb-216a485ef556"></img>
               </div>
             </div>
           </div>
@@ -202,7 +206,7 @@ function Footer1() {
           </div>
         </div>
       </div>
-      <div class="elfsight-app-d8c23125-1a13-437c-979a-500f607750cb"></div>
+      <WhatsappChat/>
       <div className="visor_Counter">
         <div class="elfsight-app-b8a56f1e-13f0-420d-a542-091d4e218b2d"></div>
       </div>

@@ -20,7 +20,7 @@ export const ServicesDetail = () => {
         if (item.name.replace(" ", "-").toLowerCase() === id) {
           return (
             <div>
-              <PageBanner bannerBg={`${rpdata?.stock?.[0]}`} currentPage="Services" heading={item.name} />
+              <PageBanner bannerBg={`${rpdata?.gallery?.[0]}`} currentPage="Services" heading={item.name} />
               <ServiceBlock
                 servicesName={item.name}
                 imgServices={item.description[0].img}

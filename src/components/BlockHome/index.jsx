@@ -13,7 +13,7 @@ function Promo() {
           <div className="col-xl-6 col-12">
             <div className="block-contents ml-xl-5 mt-5 mt-xl-0">
               <span>{rpdata.dbPrincipal?.name}</span>
-              <h1>{rpdata.dbSlogan?.[1].slogan}</h1>
+              <h1>{rpdata.dbPrincipal?.licensed}</h1>
               <h4>{rpdata.dbSlogan?.[3].slogan}</h4>
               <p>{rpdata.dbHome?.[0].text}</p>
               {rpdata?.dbServices?.slice(0,4).map((item, index) => {
@@ -32,7 +32,7 @@ function Promo() {
             </div>
           </div>
           <div className="col-xl-6 col-12 text-center">
-            <img src={rpdata?.stock?.[6]} alt="Default Img" />
+            <img src={rpdata?.gallery?.[6]} alt="Default Img" />
           </div>
         </div>
       </div>
