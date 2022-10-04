@@ -28,7 +28,7 @@ function Approch() {
               />
               <div className="content">
                 <div className="case-cat">
-                  <Link to="/contaact">
+                  <Link to="/contact">
                     <BsApp />
                   </Link>
                 </div>
@@ -49,7 +49,7 @@ function Approch() {
               />
               <div className="content">
                 <div className="case-cat">
-                  <Link to="/contaact">
+                  <Link to="/contact">
                     <BsApp />
                   </Link>
                 </div>
@@ -70,7 +70,7 @@ function Approch() {
               />
               <div className="content">
                 <div className="case-cat">
-                  <Link to="/contaact">
+                  <Link to="/contact">
                     <BsApp />
                   </Link>
                 </div>

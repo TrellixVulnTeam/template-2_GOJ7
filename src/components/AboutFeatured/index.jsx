@@ -23,11 +23,11 @@ function AboutFeatured() {
             <div className="col-xl-6 col-lg-5 col-12">
               <div
                 className="about-promo bg-cover"
-                style={{ backgroundImage: `url("${rpdata?.stock?.[5]})"` }}
+                style={{ backgroundImage: `url("${rpdata?.stock?.[10]})"` }}
               >
                 <div
                   className="skill-popup-video d-flex justify-content-center align-items-center bg-cover"
-                  style={{ backgroundImage: `url("${rpdata?.stock?.[4]})"` }}
+                  style={{ backgroundImage: `url("${rpdata?.dbPrincipal?.logo})"` }}
                 ></div>
               </div>
             </div>
