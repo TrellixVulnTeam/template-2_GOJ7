@@ -9,6 +9,7 @@ import Projects from "./pages/Projects";
 import Services from "./pages/Services";
 import axios from "axios"
 import { GlobalDataContext } from './context/context';
+import Reviews from './pages/Reviews';
 
 function App() {
  
@@ -54,6 +55,9 @@ function App() {
           </Route>
           <Route exact path="/services">
             <Services />
+          </Route>
+          <Route exact path="/reviews">
+            <Reviews/>
           </Route>
           <Route exact path="/projects">
             <Projects />

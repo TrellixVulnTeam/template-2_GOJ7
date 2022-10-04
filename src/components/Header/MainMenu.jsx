@@ -21,6 +21,9 @@ function MainMenu({ hanldeOffset }) {
                                     <Link to="/services">Services</Link>
                                 </li>
                                 <li>
+                                    <Link to="/reviews">Reviews</Link>
+                                </li>
+                                <li>
                                     <Link to="/projects">Gallery</Link>
                                 </li>
                                 <li>

@@ -15,6 +15,10 @@ const menuData = [
         title: 'Services',
         path: '/services',
     },
+    {
+        title: 'Reviews',
+        path: '/reviews',
+    },
 
     {
         title: 'Gallery',

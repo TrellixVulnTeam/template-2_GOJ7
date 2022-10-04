@@ -29,6 +29,10 @@ function Footer1() {
       link: "/services",
     },
     {
+      title: "Reviews",
+      link: "/reviews",
+    },
+    {
       title: "gallery",
       link: "/projects",
     },
