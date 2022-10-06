@@ -10,7 +10,7 @@ function Projects() {
     return (
         <>
             <Header1 />
-            <PageBanner bannerBg={`${rpdata?.stock?.[6]}`} heading="Gallery" currentPage="Gallery" />
+            <PageBanner bannerBg={`${rpdata?.gallery?.[6]}`} heading="Gallery" currentPage="Gallery" />
             <ProjectFilter />
             <Footer1 />
         </>

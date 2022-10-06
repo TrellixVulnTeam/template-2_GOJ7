@@ -11,7 +11,7 @@ function Process2() {
             <div className="container">
                 <div className="row align-center">
                     <div className="col-xl-5 col-12 text-center">
-                        <ProcessGrid2 img1={rpdata?.stock?.[6]} img2={rpdata?.stock?.[2]} img3={rpdata?.stock?.[1]} />
+                        <ProcessGrid2 img1={rpdata?.gallery?.[6]} img2={rpdata?.gallery?.[2]} img3={rpdata?.gallery?.[1]} />
                     </div>
                     <div className="col-xl-7 col-12 mt-5 mt-xl-0">
                         <div className="block-contents ml-xl-5 ml-50">
