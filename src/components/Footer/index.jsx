@@ -8,6 +8,7 @@ import {
   FaCalendar,
   FaCreditCard,
   FaArrowRight,
+  FaEnvelope,
 } from "react-icons/fa";
 
 import LiveChat from "../botonWhatsapp/BotonWhatsapp"
@@ -130,6 +131,20 @@ function Footer1() {
                       <div className="contact-info">
                         <a href={`tel:+1${item.phone}`}>
                           <span>{item.phone}</span>
+                        </a>
+                      </div>
+                    </div>
+                  );
+                })}
+                {rpdata?.dbPrincipal?.emails?.slice(0,1).map((item, index) => {
+                  return (
+                    <div className="single-contact-info" key={index}>
+                      <div className="icon">
+                        <FaEnvelope />
+                      </div>
+                      <div className="contact-info">
+                        <a href={`mailto:${item.email}`}>
+                          <span>{item.email}</span>
                         </a>
                       </div>
                     </div>
